@@ -16,7 +16,7 @@ import AccountCard from "./_components/accountCard";
 
 export default async function DashboardPage() {
   const accounts = await getUserAccount()
-  console.log(accounts)
+  // console.log(accounts)
   return (
     // <createAccountDrawer/>
     <div>
