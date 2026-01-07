@@ -4,8 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
+import { checkUser } from '@/lib/checkUser'
 
-const Header = () => {
+const Header = async () => {
+    await checkUser();
+
     return (
         <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-10 border-b">
             <nav className='px-4 py-2 flex item-center justify-between'>

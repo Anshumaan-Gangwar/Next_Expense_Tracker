@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../lib/generated/prisma"
+  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -33,7 +33,7 @@ model Account {
   id           String        @id @default(uuid())
   name         String
   type         AccountType
-  balance      Float         @default(0) // will ask inital balance while creating an account
+  balance      Decimal       @default(0) // will ask inital balance while creating an account
   isDefault    Boolean       @default(false)
   userId       String
   user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -48,7 +48,7 @@ model Account {
 model Transaction {
   id                String            @id @default(uuid())
   type             TransactionType
-  amount           Float
+  amount           Decimal
   description      String?
   date             DateTime
   category         String           
@@ -73,7 +73,7 @@ model Transaction {
 
 model Budget {
   id          String       @id @default(uuid())
-  amount      Float
+  amount      Decimal
   lastAlertSent DateTime?  // Track when the last alert was sent
   userId      String       @unique
   user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)

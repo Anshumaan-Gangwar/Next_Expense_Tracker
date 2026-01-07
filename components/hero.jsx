@@ -23,7 +23,7 @@ const Hero = () => {
             </div>
         </div>
         <div> 
-            <Image src={"/banner.jpeg"} width={1280} height={720} alt='Banner photo'/>
+            <Image src={"/banner.png"} width={1280} height={720} alt='Banner photo'/>
         </div>
     </div>
   )
